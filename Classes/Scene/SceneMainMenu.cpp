@@ -1,7 +1,8 @@
 #include "Utilities/Utilities.h"
 #include "Scene/SceneManager.h"
 #include "Scene/SceneMainMenu.h"
-#include "Scene/Layer/touchpull.h"
+#include "Scene/Layer/BallonLayer.h"
+#include "Scene/Layer/BgLayer.h"
 
 
 //#include "GameObject/GameObjectManager/GameObjectManager.h"
@@ -46,9 +47,13 @@ namespace DestoryColor
 
     void SceneMainMenu::onEnter()
     {
+		
         SceneBase::onEnter();
-        auto layer = TouchPull::create();
-        this->addChild(layer); 
+		auto ballon = BallonLayer::create();
+        this->addChild(ballon,1); 
+
+		auto bg = BgLayer::create();
+		this->addChild(bg,1);
     }
 
     void SceneMainMenu::onExit()
