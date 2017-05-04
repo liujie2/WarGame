@@ -6,27 +6,27 @@
 //
 //
 
-#ifndef touchpull_h
-#define touchpull_h
+#ifndef __BallonLayer_H__
+#define __BallonLayer_H__
 #include "cocos2d.h"
 
 using namespace cocos2d;
 
 namespace DestoryColor
 {
-    class TouchPull : public Layer{
+    class BallonLayer : public Layer{
     public:
-        TouchPull();
-        virtual ~TouchPull();
+        BallonLayer();
+        virtual ~BallonLayer();
         
         void onEnter();
         
-        CREATE_FUNC(TouchPull);
+        CREATE_FUNC(BallonLayer);
         
         virtual bool onTouchBegan(Touch * pTouches, Event * pEvent);
         virtual void onTouchEnded(Touch * pTouches, Event * pEvent);
     private:
-        Sprite* m_pull;
+        Sprite* m_ballon;
     };
 }
 
