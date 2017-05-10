@@ -12,9 +12,7 @@ namespace DestoryColor
     enum EScene
     {
         e_Scene_Invalid,
-        e_Scene_Home,
-        e_Scene_Suduku,
-        e_Scene_Plot
+        e_Scene_Home
     };
 
     class SceneManager : public Ref
@@ -28,14 +26,9 @@ namespace DestoryColor
         Scene* GetCurrentScene();
         EScene GetCurrentSceneType();
 
-        float GetScaleY();
-        void SetScaleY(float scaleValue);
-
     private:
         Scene* m_currentScene;
         EScene m_currentSceneType;
-
-        float m_scaleY;
     };
 }
 

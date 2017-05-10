@@ -20,10 +20,12 @@ namespace DestoryColor {
     void BackGroundLayer::initBG()
     {
         background_1 = Sprite::create("bg1.png");
+        background_1->setVisible(false);
         background_1->setPosition(Vec2(640, 360));
         this->addChild(background_1);
 
         background_2 = Sprite::create("bg2.png");
+        background_2->setVisible(false);
         background_2->setPosition(Vec2(1920, 360));
         this->addChild(background_2);
     }

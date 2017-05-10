@@ -3,16 +3,11 @@
 #include "Scene/SceneMainMenu.h"
 #include "Scene/Layer/BallonLayer.h"
 #include "Scene/Layer/BackGroundLayer.h"
-
-
-//#include "GameObject/GameObjectManager/GameObjectManager.h"
-//#include "GameObject/BlockObject/BlockBase.h"
-//#include "Scene/Layers/MainMenuLayer.h"
-//#include "GameLogic/MusicLogic/MusicLogic.h"
+#include "Scene/Layer/ObstacleLayer.h"
 
 namespace DestoryColor
 {
-    SceneMainMenu::SceneMainMenu()
+	SceneMainMenu::SceneMainMenu() 
     {
         
     }
@@ -20,37 +15,23 @@ namespace DestoryColor
     SceneMainMenu::~SceneMainMenu()
     {
     }
-    
-   
-
-    /*SceneMainMenu* SceneMainMenu::create()
-    {
-        SceneMainMenu *ret = new SceneMainMenu();
-        if (ret && ret->init())
-        {
-            ret->autorelease();
-            return ret;
-        }
-        else
-        {
-            CC_SAFE_DELETE(ret);
-            return nullptr;
-        }
-    }*/
-    
 
     void SceneMainMenu::update( float dt )
     {
         SceneBase::update(dt);
-        
     }
 
     void SceneMainMenu::onEnter()
     {
         SceneBase::onEnter();
+
+		// defined ballon
         auto ballon = BallonLayer::create();
         this->addChild(ballon,2); 
-
+		
+        auto obstacle = ObstacleLayer::create();
+        this->addChild(obstacle, 2);
+        
         auto bg = BackGroundLayer::create();
         this->addChild(bg,1);
     }

@@ -2,7 +2,6 @@
 #define _RUSHGIRL_SCENEBASE_
 
 #include "cocos2d.h"
-#include "ui/CocosGUI.h"
 
 USING_NS_CC;
 using namespace ui;
@@ -17,11 +16,6 @@ namespace DestoryColor
 
         virtual bool init();
         virtual void update(float dt);
-
-        const Layer* GetUiLayer() const;
-
-    protected:
-        Layer* m_pUiLayer;
     };
 }
 

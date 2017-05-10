@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "Scene/SceneManager.h"
+#include "GameLogic/PhysicLogic/PhysicManager.h"
 USING_NS_CC;
 
 static cocos2d::CCSize designResolutionSize = cocos2d::CCSizeMake(1280,720);
@@ -63,6 +64,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     DestoryColor::SceneManager::CreateSingleton();
     DestoryColor::SceneManager::Singleton().EnterScene(DestoryColor::e_Scene_Home);
     
+    DestoryColor::PhysicManager::CreateSingleton();
     return true;
 }
 
